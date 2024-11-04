@@ -13,4 +13,9 @@ public class PlayerView : MonoBehaviour
     {
         playerHealth.text = $"Health {health}";
     }
+
+    public void Death()
+    {
+        Destroy(gameObject);
+    }
 }

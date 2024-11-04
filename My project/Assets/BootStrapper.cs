@@ -1,18 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BootStrapper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private PlayerModel _playerModel;
+    private PlayerView _playerView;
+    private PlayerController _playerController;
+    private const int _maxHealth = 100;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _playerModel = new PlayerModel(_maxHealth);
+        _playerController = new PlayerController(_playerModel,_playerView);
     }
 }
