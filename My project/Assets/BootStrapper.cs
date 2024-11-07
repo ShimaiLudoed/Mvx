@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class BootStrapper : MonoBehaviour
 {
+    [SerializeField] private collisionDetector _collisionDetector;
     private PlayerModel _playerModel;
-    private PlayerView _playerView;
+    [SerializeField] private PlayerView _playerView;
     private PlayerController _playerController;
+    [SerializeField]private InputListener _inputListener;
     private const int _maxHealth = 100;
+    private const float _speed = 20;
 
     private void Start()
     {
-        _playerModel = new PlayerModel(_maxHealth);
+        _playerModel = new PlayerModel(_maxHealth,_speed);
+        Debug.Log(_playerModel +"пиздец");
         _playerController = new PlayerController(_playerModel,_playerView);
+        Debug.Log(_playerController + "скам"); 
+        _inputListener.Construct(_playerController);
+        _playerController.SetHealthPoint();
+        _collisionDetector.Construct(_playerModel);
     }
 }

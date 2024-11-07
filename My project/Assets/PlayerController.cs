@@ -14,16 +14,15 @@ public class PlayerController
         _model = model;
         _playerView = view;
         _model.OnHealthChange += SetHealthPoint;
-        _model.OnPlayerDead += _playerView.Death;
+        
     }
 
-    private void SetHealthPoint()
+    public void SetHealthPoint()
     {
         _playerView.SetHealthPoint(_model.CurHealth);
     }
-
-    private void TakeDamage(int damage)
+    public void Move(Vector2 direction)
     {
-        _model.TakeDamage(damage);
+        _playerView.Move(_model.Speed,direction);
     }
 }

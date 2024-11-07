@@ -5,9 +5,10 @@ using TMPro;
 
 public class PlayerView : MonoBehaviour
 {
-    [SerializeField] public TMP_Text playerHealth;
+     public TMP_Text playerHealth;
     [SerializeField] private Sprite playerAlive;
     [SerializeField] private Sprite playerDead;
+     public Transform playerTransform;
 
     public void SetHealthPoint(int health)
     {
@@ -17,5 +18,10 @@ public class PlayerView : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+    }
+    public void Move(float Speed, Vector2 direction)
+    {
+        Vector3 dir = new Vector3(direction.x, direction.y, 0);
+        transform.position += dir * Speed * Time.deltaTime;
     }
 }
