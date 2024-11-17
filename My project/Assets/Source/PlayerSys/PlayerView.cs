@@ -1,7 +1,6 @@
 using System;
 using TMPro;
 using UnityEngine;
-
 namespace PlayerSys
 {
     public class PlayerView : MonoBehaviour
@@ -9,17 +8,14 @@ namespace PlayerSys
         private Rigidbody2D rb;
         public TMP_Text playerHealth;
         public Transform playerTransform;
-
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
         }
-
         public void SetHealthPoint(int health)
         {
             playerHealth.text = $"Health {health}";
         }
-
         public void Death()
         {
             Destroy(gameObject);

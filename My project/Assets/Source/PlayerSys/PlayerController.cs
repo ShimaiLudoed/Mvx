@@ -1,13 +1,10 @@
-
 using UnityEngine;
-
 namespace PlayerSys
 {
     public class PlayerController
     {
         private readonly PlayerView _playerView;
         private readonly PlayerModel _model;
-    
         public PlayerController(PlayerModel model,PlayerView view)
         {
             _model = model;
@@ -15,12 +12,10 @@ namespace PlayerSys
             _model.OnHealthChange += SetHealthPoint;
             _model.OnPlayerDead += Death;
         }
-
         public void SetHealthPoint()
         {
             _playerView.SetHealthPoint(_model.CurHealth);
         }
-
         public void Death()
         {
             _playerView.Death();

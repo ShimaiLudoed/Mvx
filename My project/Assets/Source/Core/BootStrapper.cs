@@ -1,9 +1,5 @@
 using PlayerSys;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 namespace Core
 {
   public class BootStrapper : MonoBehaviour
@@ -15,13 +11,12 @@ namespace Core
     [SerializeField]private InputListener _inputListener;
     private const int _maxHealth = 100;
     private const float _speed = 20;
-
     private void Start()
     {
       _playerModel = new PlayerModel(_maxHealth,_speed);
-      Debug.Log(_playerModel +"пиздец");
+      Debug.Log(_playerModel +"РїРёР·РґРµС†");
       _playerController = new PlayerController(_playerModel,_playerView);
-      Debug.Log(_playerController + "скам"); 
+      Debug.Log(_playerController + "СЃРєР°Рј"); 
       _inputListener.Construct(_playerController);
       _playerController.SetHealthPoint();
       _collisionDetector.Construct(_playerModel);

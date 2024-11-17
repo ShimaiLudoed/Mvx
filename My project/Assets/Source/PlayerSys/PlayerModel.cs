@@ -1,5 +1,4 @@
 using System;
-
 namespace PlayerSys
 {
     public class PlayerModel
@@ -8,7 +7,6 @@ namespace PlayerSys
         public event Action OnHealthChange;
         public event Action OnPlayerDead;
         public float Speed {  get; private set; }
-
         public PlayerModel(int health, float speed)
         {
             CurHealth = health;

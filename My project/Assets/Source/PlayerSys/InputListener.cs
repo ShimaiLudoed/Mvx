@@ -1,11 +1,9 @@
 using UnityEngine;
-
 namespace PlayerSys
 {
     public class InputListener : MonoBehaviour
     {
         private PlayerController _playerController;
-
         public void Construct(PlayerController player)
         {
             _playerController = player;
