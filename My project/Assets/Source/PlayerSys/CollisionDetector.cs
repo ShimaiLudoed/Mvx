@@ -15,7 +15,6 @@ namespace PlayerSys
             if (collision.gameObject.layer==LayerMask.NameToLayer("Enemy"))
             {
                 _playerModel.TakeDamage(_damage);
-                Debug.Log("ну капэц тебе копчённый");
             }
         }
     }

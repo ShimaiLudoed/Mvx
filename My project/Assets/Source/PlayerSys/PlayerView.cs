@@ -19,13 +19,12 @@ namespace PlayerSys
         public void Death()
         {
             Destroy(gameObject);
-            Debug.Log("Смэрть");
         }
         public void Move(float Speed, Vector2 direction)
         {
             Vector3 dir = new Vector3(direction.x, direction.y, 0);
             //transform.position += dir * Speed * Time.deltaTime;
-            rb.velocity = dir * Speed;
+            rb.linearVelocity = dir * Speed;
         }
     }
 }

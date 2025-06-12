@@ -14,9 +14,9 @@ namespace Core
     private void Start()
     {
       _playerModel = new PlayerModel(_maxHealth,_speed);
-      Debug.Log(_playerModel +"пиздец");
+      Debug.Log(_playerModel);
       _playerController = new PlayerController(_playerModel,_playerView);
-      Debug.Log(_playerController + "скам"); 
+      Debug.Log(_playerController); 
       _inputListener.Construct(_playerController);
       _playerController.SetHealthPoint();
       _collisionDetector.Construct(_playerModel);
